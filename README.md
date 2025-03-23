@@ -32,5 +32,6 @@
   	Öffne deinen Webbrowser und gehe zu http://localhost:8000.
 
 ## TODO
+  - [ ] __Docker:__ Ich möchte einen Docker erstellen welcher die gesamte umgebung darstellt.
   - [ ] __Modellauswahl:__ Die Möglichkeit, das Modell auszuwählen, das du ansprechen möchtest.
   - [ ] __Mehrere Chats:__ Unterstützung für mehrere Chat-Verläufe, um unterschiedliche Konversationen parallel zu führen.
