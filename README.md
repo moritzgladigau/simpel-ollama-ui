@@ -6,6 +6,7 @@
 
 - **Texteingabe:** Du kannst eine Frage oder Anfrage an das Ollama-Modell stellen.
 - **Antworten:** Das Modell wird auf deine Eingabe reagieren und eine Antwort zurückgeben.
+- **Chat Memory:** Das Modell hat zugriff auf den gesammten vorangegangenen Chat.
   
 **Aktuell noch nicht enthalten:**
 - Die Möglichkeit, das Modell auszuwählen.

@@ -28,7 +28,7 @@ $history[] = [
 
 // Anfrage an Ollama
 $data = json_encode([
-    'model' => 'llama3.2',
+    'model' => 'phi3',
     'messages' => $history,
     'stream' => false
 ]);
