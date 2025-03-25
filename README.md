@@ -13,21 +13,39 @@
 - Die Möglichkeit, mehrere Chat-Verläufe zu führen.
 
 ## Installation
+Das Projekt benöttigt einen belibigen Webserver (z.B. Apache2, httpd,...) so wie einen PHP service zum laufen. Sollte dies bereits installiert sein kann man mit Schritt XX weiter machen.
 
-1. **Klonen des Repositories:**
+### Installation on Mac
+1. **Installiere Homebrew**
+   
+   Die offizele anleitung ist [hier](https://brew.sh).
    ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+2. **Set up httpd & php**
+   ```bash
+   brew install httpd php
+   ```
+   öffne die `/opt/homebrew/etc/httpd/httpd.conf` mit deinem bevorzugten text editor und aktiviere php mit:
+   ```vim
+   LoadModule php_module /opt/homebrew/opt/php/lib/httpd/modules/libphp.so
+   <FilesMatch \.php$>
+     SetHandler application/x-httpd-php
+   </FilesMatch>
+   ```
+3. **Klonen des Repositories:**
+   ```bash
+   cd /opt/homebrew/var/www
    git clone https://github.com/moritzgladigau/simpel-ollama-ui.git
    ```
-2. **Wechsel in das Projektverzeichnis:**
-   ```bash
-   cd simpel-ollama-ui
-   ```
-3. **Starten der Anwendung**
+4. **Starten der Anwendung**
    
-   Du kannst den Webserver mit einem beliebigen Server-Setup starten (z.B. PHP, Node.js, etc.). Falls du PHP verwendest, kannst du die Anwendung lokal mit folgendem Befehl starten:
+   Du kannst den Webserver mit einem beliebigen Server-Setup starten (z.B. PHP, Node.js, etc.). Wenn du httpd und php verwendest kannst du den service mit
    ```bash
-   php -S localhost:8000
+   brew services start httpd php
+   brew services list
    ```
+   starten und prüfen ob alles leuft.
 4.	**Zugriff auf die Anwendung:**
 
   	Öffne deinen Webbrowser und gehe zu http://localhost:8000.
