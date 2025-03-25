@@ -36,6 +36,7 @@ Das Projekt benötigt einen beliebigen Webserver (z. B. Apache2, httpd, ...) sow
      SetHandler application/x-httpd-php
    </FilesMatch>
    ```
+   Es kann hilfreich sein in der `/opt/homebrew/etc/php/8.4/php.ini` den `max_execution_time` Wert zu erhöhen, da das Ollama-Modell je nach PC länger brauchen kann zu antworten.
 3. **Repository klonen:**
    ```bash
    cd /opt/homebrew/var/www
