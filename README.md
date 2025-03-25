@@ -48,7 +48,7 @@ Das Projekt benöttigt einen belibigen Webserver (z.B. Apache2, httpd,...) so wi
    starten und prüfen ob alles leuft.
 4.	**Zugriff auf die Anwendung:**
 
-  	Öffne deinen Webbrowser und gehe zu http://localhost:8000.
+  	Öffne deinen Webbrowser und gehe zu http://localhost:8080/simpel-ollama-ui/src/.
 
 ## TODO
   - [ ] __Docker:__ Ich möchte einen Docker erstellen welcher die gesamte umgebung darstellt.
