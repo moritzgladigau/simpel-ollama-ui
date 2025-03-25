@@ -6,49 +6,52 @@
 
 - **Texteingabe:** Du kannst eine Frage oder Anfrage an das Ollama-Modell stellen.
 - **Antworten:** Das Modell wird auf deine Eingabe reagieren und eine Antwort zurückgeben.
-- **Chat Memory:** Das Modell hat zugriff auf den gesammten vorangegangenen Chat.
-  
+- **Chat Memory:** Das Modell hat Zugriff auf den gesamten vorangegangenen Chat.
+
 **Aktuell noch nicht enthalten:**
+
 - Die Möglichkeit, das Modell auszuwählen.
 - Die Möglichkeit, mehrere Chat-Verläufe zu führen.
 
 ## Installation
-Das Projekt benöttigt einen belibigen Webserver (z.B. Apache2, httpd,...) so wie einen PHP service zum laufen. Sollte dies bereits installiert sein kann man mit Schritt XX weiter machen.
 
-### Installation on Mac
-1. **Installiere Homebrew**
-   
-   Die offizele anleitung ist [hier](https://brew.sh).
+Das Projekt benötigt einen beliebigen Webserver (z. B. Apache2, httpd, ...) sowie einen PHP-Service zum Laufen. Sollte dies bereits installiert sein, kannst du mit Schritt XX weitermachen.
+
+### Installation auf macOS
+
+1. **Homebrew installieren**
+
+   Die offizielle Anleitung ist [hier](https://brew.sh) zu finden.
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-2. **Set up httpd & php**
+2. **httpd & PHP einrichten**
    ```bash
    brew install httpd php
    ```
-   öffne die `/opt/homebrew/etc/httpd/httpd.conf` mit deinem bevorzugten text editor und aktiviere php mit:
-   ```vim
+   Öffne die Datei `/opt/homebrew/etc/httpd/httpd.conf` mit deinem bevorzugten Texteditor und aktiviere PHP mit:
+   ```apache
    LoadModule php_module /opt/homebrew/opt/php/lib/httpd/modules/libphp.so
    <FilesMatch \.php$>
      SetHandler application/x-httpd-php
    </FilesMatch>
    ```
-3. **Klonen des Repositories:**
+3. **Repository klonen:**
    ```bash
    cd /opt/homebrew/var/www
    git clone https://github.com/moritzgladigau/simpel-ollama-ui.git
    ```
-4. **Starten der Anwendung**
-   
-   Du kannst den Webserver mit einem beliebigen Server-Setup starten (z.B. PHP, Node.js, etc.). Wenn du httpd und php verwendest kannst du den service mit
+4. **Anwendung starten**
+
+   Du kannst den Webserver mit einem beliebigen Server-Setup starten (z. B. PHP, Node.js, etc.). Wenn du httpd und PHP verwendest, kannst du den Service mit
    ```bash
    brew services start httpd php
    brew services list
    ```
-   starten und prüfen ob alles leuft.
-4.	**Zugriff auf die Anwendung:**
+   starten und prüfen, ob alles läuft.
+5. **Zugriff auf die Anwendung:**
 
-  	Öffne deinen Webbrowser und gehe zu http://localhost:8080/simpel-ollama-ui/src/.
+   Öffne deinen Webbrowser und gehe zu [http://localhost:8080/simpel-ollama-ui/src/](http://localhost:8080/simpel-ollama-ui/src/).
 
 ## TODO
   - [ ] __Docker:__ Ich möchte einen Docker erstellen welcher die gesamte umgebung darstellt.
