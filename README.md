@@ -54,6 +54,45 @@ Das Projekt benötigt einen beliebigen Webserver (z. B. Apache2, httpd, ...) sow
 
    Öffne deinen Webbrowser und gehe zu [http://localhost:8080/simpel-ollama-ui/src/](http://localhost:8080/simpel-ollama-ui/src/).
 
+### Installation auf Linux
+1. **Paketee installieren**
+
+   Je nach Distribution musst du die passenden Pakete installieren. Für Debian/Ubuntu:
+   ```bash
+   sudo apt update
+   sudo apt install apache2 php git
+   ```
+   Für Arch Linux:
+   ```bash
+   sudo pacman -Syu apache php git
+   ```
+
+2. **max_execution_time erhöhen**
+   
+   Falls nötig, kannst du diesen Wert in der PHP-Konfigurationsdatei ändern:
+   ```bash
+   sudo vim /etc/php/8.4/apache2/php.ini # Debian/Ubuntu
+   sudo vim /etc/php.ini # Arch Linux
+   ```
+   Ändere den Wert von `max_execution_time=30` auf einen höheren Wert.
+
+3. **Repository klonen**
+   ```bash
+   cd /var/www/html
+   sudo git clone https://github.com/moritzgladigau/simpel-ollama-ui.git
+   sudo chown -R www-data:www-data simpel-ollama-ui  # Rechte setzen fals nötig
+   ```
+
+4. **Apache starten & aktivieen**
+   ```bash
+   sudo systemctl enable --now apache2  # Debian/Ubuntu
+   sudo systemctl enable --now httpd  # Arch Linux
+   ```
+
+5. **Zugriff auf die Anwendung**
+
+   Öffne den Browser und gehe zu: http://localhost/simpel-ollama-ui/src/
+   
 ## TODO
   - [ ] __Docker:__ Ich möchte einen Docker erstellen welcher die gesamte umgebung darstellt.
   - [ ] __Modellauswahl:__ Die Möglichkeit, das Modell auszuwählen, das du ansprechen möchtest.
