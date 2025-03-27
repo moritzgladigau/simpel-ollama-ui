@@ -60,7 +60,7 @@ Das Projekt benötigt einen beliebigen Webserver (z. B. Apache2, httpd, ...) sow
    Je nach Distribution musst du die passenden Pakete installieren. Für Debian/Ubuntu:
    ```bash
    sudo apt update
-   sudo apt install apache2 php git
+   sudo apt install apache2 php php-curl git
    ```
    Für Arch Linux:
    ```bash
