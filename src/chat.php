@@ -39,7 +39,18 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+
 $response = curl_exec($ch);
+
+// Pruefen ob ein Fehler bei der Anfrage aufgetreten ist
+if (curl_errno($ch)) {
+    http_response_code(502); // Bad Gateway
+    echo json_encode([
+	"error" => "Verbindung zu Ollama fehlgeschlagen: " . curl_error($ch)
+    ]);
+    curl_close($ch);
+    exit;
+}
 curl_close($ch);
 
 // Verarbeite die Antwort
