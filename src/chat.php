@@ -3,7 +3,7 @@
 
 
 // Dateipfad zur Historie
-$history_file = 'chat_history.json';
+$history_file = '../data/chat_history-' . date('Y-m-d') . '.json';
 
 // JSON-Daten von der Anfrage abrufen
 $input = json_decode(file_get_contents("php://input"), true);
